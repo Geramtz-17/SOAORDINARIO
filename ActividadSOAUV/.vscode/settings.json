@@ -1,0 +1,12 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "interactive",
+
+    "python.defaultInterpreterPath": "C:\\Users\\Gerardo\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+    "python.pythonPath": "C:\\Users\\Gerardo\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}"
+    ],
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.activateEnvInCurrentTerminal": true
+}

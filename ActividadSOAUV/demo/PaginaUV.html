@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Plataforma Académica Unificada</title>
+    
+    <style>
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            padding: 30px; 
+            margin: 0;
+            background-color: #FFFFFF;
+            color: #333;
+        }
+        
+        h1 {
+            color: #1E8449;
+            border-bottom: 2px solid #A9DFBF;
+            padding-bottom: 10px;
+        }
+
+        .module { 
+            border: 1px solid #A9DFBF;
+            padding: 20px; 
+            margin-bottom: 25px; 
+            border-radius: 8px; 
+            background-color: #F8F9F9;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .module h2 { 
+            margin-top: 0; 
+            color: #27AE60;
+        }
+
+        input[type="text"], input[type="number"], input[type="date"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #2ECC71; 
+            color: white;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #27AE60; 
+        }
+        
+        #resultadoAlumno, #resultadoCurso {
+            margin-top: 15px;
+            padding: 10px;
+            border-left: 5px solid #2ECC71;
+            background-color: #EBF5FB;
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #D5DBDB;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Plataforma Académica (Frontend Unificado)</h1>
+<div class="module" id="matricula-soap">
+        <h2>Módulo Matrícula (SOAP)</h2>
+        
+        <h3>Registrar / Editar Alumno</h3>
+        <form id="formAlumno">
+            <input type="number" id="matricula_registro" placeholder="Matrícula" required><br>
+            <input type="text" id="nombre" placeholder="Nombre" required><br>
+            <input type="text" id="apellido" placeholder="Apellido" required><br>
+            <button type="submit">Registrar / Editar Alumno</button>
+        </form>
+
+        <hr> 
+        
+        <h3>Consultar Alumno</h3>
+        <form id="formConsultaAlumno">
+            <input type="number" id="matricula_consulta" placeholder="Matrícula a consultar" required>
+            <button type="submit">Consultar Alumno</button>
+        </form>
+        
+        <p id="resultadoAlumnoConsulta"></p>
+        
+        <p id="resultadoAlumnoRegistro"></p>
+    </div>
+    <hr>
+
+    <div class="module" id="curso-rest">
+        <h2>Módulo Curso (REST)</h2>
+        <h3>Registrar Curso</h3>
+        <form id="formCurso">
+            <input type="text" id="nombreCurso" placeholder="Nombre del Curso" required><br>
+            <input type="date" id="fechaInicio" placeholder="Fecha de Inicio" required><br>
+            <button type="submit">Registrar Curso</button>
+        </form>
+
+        <h3>Eliminar Curso</h3>
+        <input type="number" id="idCursoEliminar" placeholder="ID del Curso a eliminar">
+        <button onclick="eliminarCurso()">Eliminar por ID</button>
+        
+        <br>
+        
+        <input type="text" id="nombreCursoEliminarCriterio" placeholder="Nombre del Curso">
+        <input type="date" id="fechaCursoEliminarCriterio" placeholder="Fecha de Inicio">
+        <button onclick="eliminarCursoPorCriterio()">Eliminar por Nombre/Fecha</button>
+        
+        <p id="resultadoCurso"></p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
